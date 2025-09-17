@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Container>
+  <Name>youtubarr</Name>
+  <Repository>ghcr.io/diredirecrocs/youtubarr:latest</Repository>
+  <Network>bridge</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Spotweb/Youtubarr</Support>
+  <Project>https://github.com/Spotweb/Youtubarr</Project>
+  <Overview>Youtubarr syncs YouTube playlists into Lidarr as import lists.</Overview>
+  <Category>MediaApp:Music</Category>
+  <WebUI>http://[IP]:[PORT:8000]</WebUI>
+  <Icon>https://raw.githubusercontent.com/<noaaf500>/unraid-templates/main/youtubarr/icon.png</Icon>
+
+  <!-- Port -->
+  <Config Name="WebUI Port" Target="8000" Default="8000" Mode="tcp" Type="Port" Display="always">8000</Config>
+
+  <!-- Path -->
+  <Config Name="AppData Config Path" Target="/data" Default="/mnt/user/appdata/youtubarr/data" Mode="rw" Type="Path" Display="always">/mnt/user/appdata/youtubarr/data</Config>
+
+  <!-- Environment variables -->
+  <Config Name="YOUTUBE_API_KEY" Target="YOUTUBE_API_KEY" Default="" Type="Variable" Display="always"></Config>
+  <Config Name="LIDARR_TOKEN" Target="LIDARR_TOKEN" Default="changeme" Type="Variable" Display="always">changeme</Config>
+  <Config Name="ALLOWED_HOSTS" Target="ALLOWED_HOSTS" Default="*" Type="Variable" Display="always">*</Config>
+</Container>
